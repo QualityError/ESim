@@ -1,0 +1,32 @@
+Notes
+
+def abb = arbitrary but balanced
+
+
+make max force an atribnute of genetics
+some creatures able to change speed/direction faster than other
+rather than purely based on their topspeed
+
+make size and attribute of genetics
+
+---------------------------------------------------------------------------------------------
+
+need to add check to ensure grid size will work with cell Size
+problem with gaining mass
+add color object to creature and remove display methods in moab and predator
+
+POSSIBLE ADD-ONS
+memory of food/water points
+have preds fight each other to enable pred reduction and gain sense of territory ownership
+add objects that block moven=ment
+add option to fit grid to screen
+fix predator detection range
+currently not fleeing until half the distance that they detect food
+to add
+bouncing     nonpassable creatures
+averages
+movement based off mouse click and drag
+mito
+herding
+terrain and neural networks
+grazing on grass terain insead of finding food for moabs and mito

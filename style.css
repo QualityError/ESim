@@ -1,0 +1,105 @@
+
+
+/* The sidebar menu */
+.sideOptions {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 170px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: rgb(80,80,80); /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    color: white;
+
+}
+/*
+.sideOptions * {
+	padding-left: 5px;
+}*/
+
+.settings *{
+	padding-left: 10px;
+}
+
+.slider {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+.settingsHeader {
+	color:lightblue;
+	padding-top: 10px;
+	margin-top:0px;
+	margin-bottom: 0px;
+}
+
+#checkBoxes * {
+	padding: 5px;
+}
+
+body {
+	background-color: rgb(80,80,80);
+	width:100%;
+}
+
+.footer {
+	height: 60px;
+	width: 100%;
+	background-color: rgb(80,80,80);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+
+
+
+}
+button {
+	margin-left: 10px;
+}
+.btn {
+    border: none;
+    width: 150px;
+    background-color: gray;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+}
+/* On mouse-over */
+.btn:hover {background: darkgray;}
+
+
+#mainCanvas {
+	border:1px solid #000000;
+	position: absolute;
+	padding: 10px;
+
+}
+
+body {
+	background-color: darkgray;
+}
+
+/* Style page content */
+#main {
+    padding: 10px;
+    position:absolute;
+    top: 0px; left:170px;
+	width: -webkit-calc(100% - 190px);
+    width:    -moz-calc(100% - 190px);
+    width:         calc(100% - 190px);
+	height: -webkit-calc(100% - 80px);
+    height:    -moz-calc(100% - 80px);
+    height:         calc(100% - 80px);
+    overflow: auto;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

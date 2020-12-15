@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Environment Sim</title>
+
+</head>
+<body>
+	<div id="main">
+		<canvas id="mainCanvas" style = "background: darkgray"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById("mainCanvas");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#FF0000";
+			var canvasParent = document.getElementById("main");
+			function setCanvasSize(){
+				canvas.width = canvasParent.offsetWidth - 40;
+				canvas.height = canvasParent.offsetHeight - 40;
+			}
+			setCanvasSize();
+			window.addEventListener("resize", setCanvasSize);
+
+		</script>
+	<script type="text/javascript" src="js/auxiliary.js"> </script>
+	<script type="text/javascript" src="js/genetics.js"> </script>
+	<script type="text/javascript" src="js/settings.js"> </script>
+	<script type="text/javascript" src="js/vector.js"> </script>
+	<script type="text/javascript" src="js/egg.js"> </script>
+	<script type="text/javascript" src="js/field.js"> </script>
+	<script type="text/javascript" src="js/esim.js"> </script>
+	<script type="text/javascript" src="js/food.js"> </script>
+	<script type="text/javascript" src="js/creature.js"> </script>
+	<script type="text/javascript" src="js/moab.js"> </script>
+	<script type="text/javascript" src="js/predator.js"> </script>
+
+	<script type="text/javascript" src="script.js"> </script>
+
+	<script type="text/javascript">
+		startSim();
+	</script>
+
+	</div>
+
+	<aside class="sideOptions">
+	
+	<button class="btn startUpSettings" onclick="toggleElement('startUpSettings')">Start Up Settings</button>
+	<div id="startUpSettings" class="settings" style="display: none">
+		<div class="slider">
+		<input type="range" name="startingMoabsSlider" min="0" max="100" value="10" step="1" onInput="changeVal('startingNumberMoabs',this.value)" />
+		Starting Moabs: <span id="startingNumberMoabs">10</span>
+		</div>
+
+		<div class="slider">
+		<input type="range" name="statingPredatorsSlider" min="0" max="100" value="0" step="2" onInput="changeVal('startingNumberPredators',this.value)" />
+		Starting Predators: <span id="startingNumberPredators">0</span>
+		</div>
+
+		<div class="slider">
+		<input type="range" name="startingFoodSlider" min="0" max="3000" value="20" step="2" onInput="changeVal('startingNumberFood',this.value)" />
+		Starting Food: <span id="startingNumberFood">20</span>
+		</div>
+	</div>
+
+	<button id="btnCreatureSettings" class="btn creatureSettings" onclick="toggleElement('creatureSettings')">Creature Settings</button>
+	<div id="creatureSettings" class="settings" style="display: none">
+		<div class="slider">
+		<input type="range" name="maxCreatureSpeedSlider" min="0" max="16" value="8" step="1" onInput="changeVal('maxCreatureSpeed',this.value)" />
+		Max Speed: <span id="maxCreatureSpeed">8</span>
+		</div>
+
+		<div class="slider">
+		<input type="range" name="creatureRadiusSlider" min="2" max="20" value="10" step="1" onInput="changeVal('creatureRadius',this.value)" />
+		Radius: <span id="creatureRadius">10</span>
+		</div>
+		<div id="checkBoxes">
+			<div>
+			Drop Food
+			<input type="checkBox" name="dropFoodOnDeathCheckBox" checked="true" onclick="changeVal('dropFoodOnDeath',this.checked);" />
+			</div>
+			<div>
+			Food Spread
+			<input type="checkBox" name="foodSpreadOnDeathCheckBox" checked="true" onclick="changeVal('foodSpreadOnDeath',this.checked);"/>
+			</div>
+			<div>
+			Immortal
+			<input type="checkBox" name="immortalCheckBox" onclick="changeVal('immortal',this.checked);"/>
+			</div>
+		</div>
+	</div><!--end of creature settings -->
+	<button class="btn geneticSettings" onclick="toggleElement('geneticSettings')">Genetic Settings</button>
+	<div id=geneticSettings class="settings" style="display: none">
+		<!-- add option to switch between genetic presets defined in info -->
+		<!-- add tooltips for better user understanding -->
+		<p>Default Genes</p>
+		<div class="slider">
+		<input type="range" name="sightDistanceSlider" min="0" max="50" value="0" step="1" onInput="changeVal('sightDistance',this.value)" />
+		Sight Distance: <span id="sightDistance">0</span>
+		</div>
+		<div class="slider">
+		<input type="range" name="topSpeedSlider" min="0" max="8" value="4" step="1" onInput="changeVal('topSpeed',this.value)" />
+		Top Speed: <span id="topSpeed">4</span>
+		</div>
+		<div class="slider">
+		<input type="range" name="lifeSpanSlider" min="0" max="3000" value="150" step="5" onInput="changeVal('timeTilDeath',this.value)" />
+		Life Span: <span id="timeTilDeath">150</span>
+		</div><!-- time til death -->
+		<div class="slider">
+		<input type="range" name="foodCycleSlider" min="0" max= "150" value="50" step="5" onInput="changeVal('timeTilFoodNeeded',this.value)" />
+		Food Cycle: <span id="timeTilFoodNeeded">50</span>
+		</div>
+		
+	</div>
+
+	<button class="btn restart" onclick="restart()">Restart Sim</button>
+	</aside><!--end of side settings -->
+
+	<div class = "footer">
+		<input type="button" name="restart" label="Restart" onClick="restart()" />
+	</div>
+
+</body>
+</html>
